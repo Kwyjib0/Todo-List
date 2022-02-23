@@ -7,9 +7,7 @@
 
 ##### In your Terminal:
 
-1. Clone this Repo with `git clone GITHUB URL`
-2. `cd` into the Repo folder
-3. Run `python3 tip_calculator.py` or `python tip_calculator.py`
+1.
 
 ##### Then to create and edit the list:
 1. This app takes user input 
