@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Todo(models.Model):
+class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    task_id = models.AutoField(primary_key=True)
+    # task_id = models.AutoField(primary_key=True)
     task = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
