@@ -79,6 +79,14 @@ class TaskList(LoginRequiredMixin, ListView):
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         # and filter for uncompleted tasks
         context['count'] = context['tasks'].filter(complete=False)
+        # get value by form name, make empty string by default if no search value entered
+        search_input = self.request.GET.get('search-area') or ''
+        # check if search value entered
+        if search_input:
+            # check if any task contains search value
+            context['tasks'] = context['tasks'].filter(task__startswith=search_input)
+        # pass to template
+        context['search_input'] = search_input
         return context
 
 # detail view returns info about a specific item / object instance
