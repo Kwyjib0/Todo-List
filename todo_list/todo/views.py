@@ -83,7 +83,7 @@ class TaskList(LoginRequiredMixin, ListView):
         search_input = self.request.GET.get('search-area') or ''
         # check if search value entered
         if search_input:
-            # check if any task contains search value
+            # check if any task starts with search value
             context['tasks'] = context['tasks'].filter(task__startswith=search_input)
         # pass to template
         context['search_input'] = search_input
