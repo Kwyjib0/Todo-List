@@ -1,4 +1,18 @@
-<h1>Task: {{ task }}</h1>
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="card-header">
+        <h2>Task:  {{ task }}</h2>
+    </div>
+    <div class="card">
+        <p>{{ task.description }}</p>
+        </br>
+        <a class="button" href="{% url 'list' %}">Back</a>
+    </div>
+</div>
+{% endblock %}
 
 
 
