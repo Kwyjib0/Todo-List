@@ -73,9 +73,6 @@ or
 ---
 ***
 
-<br>
-
-***
 Copyright (c) 5/12/2021 Chris Linton
 
 
