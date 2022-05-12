@@ -75,21 +75,6 @@ or
 
 <br>
 
-## <div align="center">MVP</div>
-
-<ul>
-<li>Full CRUD capabilities:</li>
-  <ul>
-    <li>create your own art exhibit</li>
-    <li>navigate between featured and upcoming art exhibits</li>
-    <li>update and edit an art exhibit and images of related works</li>
-    <li>delete art exhibits and related images</li>
-  </ul>
-</ul>
-
----
-<br>  
-  
 ***
 Copyright (c) 5/12/2021 Chris Linton
 
