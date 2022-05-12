@@ -1,9 +1,27 @@
-<h1>Register</h1>
+{% extends 'main.html' %}
+{% load static %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Register" />
-</form>
 
-<p>Already have an account?<a href="">Login</a></p>
+{% block content %}
+<div class="container">
+    <div class="card-header">
+        <h2>Register</h2>
+    </div>
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}        
+            <label>{{form.username.label}}</label></br>
+            {{form.username}}</br></br>
+    
+            <label>{{form.password1.label}}</label></br>
+            {{form.password1}}</br></br>
+    
+            <label>{{form.password2.label}}</label></br>
+            {{form.password2}}</br></br>
+            <input class="button" type="submit" value="Register" />
+        </form></br>
+        <p>Already have an account?<a href="{% url 'login' %}">Login</a></p>
+    </div>
+
+</div>
+{% endblock %}

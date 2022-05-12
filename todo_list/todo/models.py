@@ -7,7 +7,7 @@ class Task(models.Model):
     # task_id = models.AutoField(primary_key=True)
     task = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
-    is_done = models.BooleanField(default=False)
+    complete = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -15,4 +15,4 @@ class Task(models.Model):
 
     class Meta:
         # put completed items last
-        ordering = ['is_done']
+        ordering = ['complete']

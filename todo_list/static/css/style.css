@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeeee4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.card-header {
+    background-color: #2596be;
+    border: red solid 1px;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.card {    
+    background-color: #eeeee4;
+    display: flex;
+    flex-direction: column;
+    border: green solid 1px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 2.5em;
+}
+
+.button {
+    border: 1px solid #154c79;
+    background-color: #1e81b0;
+    color: #eeeee4;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.search {
+    height: 34px;    
+    border-radius: 5px;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-logout, .back {
+    cursor: pointer; 
+    color: #000; 
+    text-decoration: none; 
+    padding-top: 0.5em;
+}
+
+.task-btn {
+    cursor: pointer; 
+    color: #2596be; 
+}
+
+.circle {
+    border: .5px solid #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
