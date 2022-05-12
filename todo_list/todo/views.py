@@ -78,7 +78,7 @@ class TaskList(LoginRequiredMixin, ListView):
         # filter for only tasks for this specific user
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         # and filter for uncompleted tasks
-        context['count'] = context['tasks'].filter(complete=False)
+        context['count'] = context['tasks'].filter(complete=False).count()
         # get value by form name, make empty string by default if no search value entered
         search_input = self.request.GET.get('search-area') or ''
         # check if search value entered
