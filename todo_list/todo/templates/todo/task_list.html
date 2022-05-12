@@ -1,46 +1,47 @@
-{% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
-    <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-    <a href="{% url 'login' %}">Login</a>
-{% endif %}
+{% extends 'main.html' %}
+{% load static %}
 
-<hr>
-<h1>To Do List:</h1>
-<a href="{% url 'task-create' %}">Add Task</a>
+{% block content %}
+<div class="container">
+    <div class="card-header">
+        {% if request.user.is_authenticated %}
+            <div class="sub-header">
+                <h2>Hello {{request.user}}</h2>
+                <a href="{% url 'logout' %}" class="login-logout">Logout</a>
+            </div>
+            <h4>You have {{count}} incomplete tasks</h4>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
 
-<form method="GET">
-    <input type="text" name="search-area" value={{search_input}}>
-    <input type="submit" value="Search">
-</form>
+    </div>
+    
+    <div class="card">
+        <a class="button" href="{% url 'task-create' %}">Add Task</a></br>
 
-<table>
-    <tr>
-        <th>Task</th>
-        <th></th>
-        <th></th>
-    </tr>
-    {% for task in tasks %}
-    <tr>
-        <td>{{ task.task }}</td>
-        <td><a href="{% url 'task' task.id %}">View</a></td>
-        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-    </tr>
-    <!--checks if list is empty-->
-    {% empty %}
-        <h3>No tasks in list.</h3>
-    {% endfor %}
-</table>
+        <form method="GET">
+            <input class="search" type="text" name="search-area" value={{search_input}}>
+            <input class="button" type="submit" value="Search">
+        </form>
 
-
-{% comment %} <form action="{% url 'todo' %}" method="POST">
-    {% csrf_token %} {{ form }}
-    <input type="submit" name="create" value="Create" />
-</form>
-
-<ul>
-    {% for task in tasks %}
-    <li><a href="{% url 'task' task.task_id %}">{{ task.task }}</a></li>
-    {% endfor %}
-</ul> {% endcomment %}
+        <table>
+            <tr>
+                <th><h2 style="text-align: left">Tasks:</h2></th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td style="padding-right: 2em;">{{ task.task }}</td>
+                    <td><a href="{% url 'task' task.id %}" class="task-btn">View</a></td>
+                    <td><a href="{% url 'task-update' task.id %}" class="task-btn">Edit</a></td>
+                    <td><a href="{% url 'task-delete' task.id %}" class="task-btn">Delete</a></td>
+            </tr>
+            <!--checks if list is empty-->
+            {% empty %}
+                <h3>No tasks in list.</h3>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,8 +1,28 @@
-<h3>Task Form</h3>
-<a href="{% url 'list' %}">Go Back</a>
-<form method="POST" action="">
-    <!--by defaul form name is passed in as form-->
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="card-header">
+        <div class="sub-header">
+            <h2>Task Form</h2>
+            <a href="{% url 'list' %}" class="back"><span class="circle">&#8678;</span> Back</a>
+        </div>
+    </div>
+    <div class="card">
+        <form method="POST" action="">
+            <!--by defaul form name is passed in as form-->
+            {% csrf_token %}     
+            <label>{{form.task.label}}</label></br>
+            {{form.task}}</br></br>
+    
+            <label>{{form.description.label}}</label></br>
+            {{form.description}}</br></br>
+    
+            <label>{{form.complete.label}}</label>
+            {{form.complete}}</br></br>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

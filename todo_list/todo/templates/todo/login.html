@@ -1,9 +1,24 @@
-<h1>Login</h1>
+{% extends 'main.html' %}
+{% load static %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Login" />
-</form>
+{% block content %}
+<div class="container">
+    <div class="card-header">
+        <h2>Login</h2>
+    </div>
+    <div class="card">
+        <form method="POST" class="text-center">
+            {% csrf_token %}
 
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+            <label>{{form.username.label}}</label></br>
+            {{form.username}}</br></br>
+    
+            <label>{{form.password.label}}</label></br>
+            {{form.password}}</br></br>
+
+            <input class="button" type="submit" value="Login" />
+        </form></br>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+</div>
+{% endblock %}
