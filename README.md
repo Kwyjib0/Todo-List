@@ -2,7 +2,7 @@
 # <h1><div align="center">To-Do List</div></h1>  
 <br>
 ## Python / Django App for creating and editing a todo list
----
+
 
 ## <div align="center">Installation/Requirements</div>
 #### <div align="center">To-Do List requires [Python](https://www.python.org/) v3.9+ and [Django](https://www.djangoproject.com/) to run.</div>
