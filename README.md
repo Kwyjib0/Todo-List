@@ -1,7 +1,7 @@
 
 # <h1><div align="center">To-Do List</div></h1>  
 <br>
-## Python / Django App for creating and editing a todo list
+## Python / Django App for creating and editing a to-do list
 
 
 ## <div align="center">Installation/Requirements</div>
